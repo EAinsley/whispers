@@ -1,0 +1,248 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvd7rwpd43gau"]
+
+[ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="1_2r13h"]
+[ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="2_15j1c"]
+[ext_resource type="Script" path="res://Scripts/maze_generator.gd" id="2_ellbx"]
+[ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="3_io2iq"]
+[ext_resource type="Texture2D" uid="uid://b8c5t5ldyupoi" path="res://Scene/Terrain (16x16).png" id="3_xxgvg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac2a3"]
+texture = ExtResource("3_xxgvg")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, 8, -8, 8, -8, -8, 8, -8, 8, 0.125, -0.125, 0)
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.125, -8, 0.125)
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, 8, -0.75, 0, 8, 0.125, 8, 8)
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -0.25, 5, 0, 5, 8)
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, 8, -8, 8, -8, -8, 0.25, -8)
+1:1/0 = 0
+1:1/0/terrain_set = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.25, -8, 8, -8, 8, 8, -0.25, 8)
+3:1/next_alternative_id = 2
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.625, 0.125, -4.625, -8, 8, -8, 8, 0.125)
+3:1/1 = 1
+4:1/next_alternative_id = 2
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, -8, 0.25, -8, 0.375, 0.125)
+4:1/1 = 1
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, 0, 8, 0.125)
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.25, -8, 8, -8, 8, 8, -8, 8, -8, 0, -0.125, 0)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3jlvd"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Wall"
+terrain_set_0/terrain_0/color = Color(0.33, 0.33, 0.33, 1)
+sources/0 = SubResource("TileSetAtlasSource_ac2a3")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="GameLayer"]
+visible = false
+color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="MarginalContainer" type="CenterContainer" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="HBoxContainer" parent="GameLayer/MarginalContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="ColorRect" parent="GameLayer/MarginalContainer/VSeparator"]
+texture_filter = 1
+custom_minimum_size = Vector2(532, 532)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.51, 0.51, 0.51, 1)
+
+[node name="MazeGenerator" type="TileMapLayer" parent="GameLayer/MarginalContainer/VSeparator/TextureRect"]
+tile_set = SubResource("TileSet_3jlvd")
+script = ExtResource("2_ellbx")
+maze_size = Vector2i(3, 3)
+
+[node name="TextureRect2" type="TextureRect" parent="GameLayer/MarginalContainer/VSeparator"]
+texture_filter = 1
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_2r13h")
+
+[node name="player" parent="GameLayer" instance=ExtResource("2_15j1c")]
+position = Vector2(183, 187)
+collision_mask = 4
+light_radius = 100
+
+[node name="Collectables" parent="GameLayer" instance=ExtResource("3_io2iq")]
+position = Vector2(747, 194)
+
+[node name="UILayer" type="CanvasLayer" parent="." groups=["ui_layer"]]

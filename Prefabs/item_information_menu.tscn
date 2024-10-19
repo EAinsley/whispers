@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqkc5ss2mdte6"]
+
+[ext_resource type="Script" path="res://Prefabs/item_information_menu.gd" id="1_x8bqp"]
+[ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="2_u2b2v"]
+
+[node name="ItemMenu" type="CanvasLayer"]
+script = ExtResource("1_x8bqp")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.269
+anchor_right = 0.674
+anchor_bottom = 0.731
+offset_left = 0.447998
+offset_top = -0.312012
+offset_right = -0.447998
+offset_bottom = 0.311981
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemPicture" type="TextureRect" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.62
+texture = ExtResource("2_u2b2v")
+stretch_mode = 3
+
+[node name="ItemExplanation" type="Label" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.62
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is an explanation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemName" type="Label" parent="Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+text = "Item Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.732
+anchor_right = 0.5
+anchor_bottom = 0.732
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
