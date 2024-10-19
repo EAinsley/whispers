@@ -8,8 +8,8 @@ extends Node
 func set_item(item:ItemResorce) -> void:
 		if item.icon:
 			_item_picture.texture = item.icon
-		if item.description:
-			_item_explanation.text = item.description
+		if item.item_description:
+			_item_explanation.text = item.item_description
 		if item.name:
 			_item_name.text = item.name
 

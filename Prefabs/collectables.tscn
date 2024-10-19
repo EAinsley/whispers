@@ -8,7 +8,10 @@
 script = ExtResource("3_vg2l4")
 icon = ExtResource("1_vr34v")
 name = "Item 1"
-description = "This is the description"
+id = ""
+size = 1
+index = 1
+item_description = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cnhv"]
 size = Vector2(131, 132)

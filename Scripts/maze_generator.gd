@@ -1,12 +1,15 @@
+class_name MazeGenerator
 extends TileMapLayer
 
 @export var maze_size := Vector2i(15, 15)
 @export var entrance := Vector2i(0, -1)
 @export var exit := Vector2i(14, 15)
+@export var next_level: PackedScene
 
 var union_parent: Array[int]
 var union_edges: Array[Vector2i]
 var walls : Array[Vector2i]
+@onready var exit_scene: PackedScene = preload("res://Prefabs/exit.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,9 +18,12 @@ func _ready() -> void:
 	union_initialize()
 	generate_maze()
 	set_cells_terrain_connect(walls, 0, 0, false)
-	erase_cell(entrance * 2 + Vector2i.DOWN)
-	erase_cell(exit * 2 + Vector2i.UP)
-
+	set_cells_terrain_connect([exit * 2 + Vector2i.UP, exit * 2 + Vector2i.DOWN, exit * 2 + Vector2i.LEFT, exit * 2 + Vector2i.RIGHT], 0, -1)
+	var exit_node: Exit = exit_scene.instantiate()
+	add_child(exit_node)
+	exit_node.position = map_to_local(exit * 2)
+	exit_node.next_level = next_level
+	
 # Union find terrain generator?
 func union_initialize() -> void:
 	var node_number = maze_size.x * maze_size.y

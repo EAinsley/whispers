@@ -13,6 +13,7 @@ config_version=5
 config/name="SpookyGameJam"
 run/main_scene="res://Scene/sandbox.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -65,3 +66,7 @@ click={
 2d_physics/layer_1="player"
 2d_physics/layer_2="Collectable"
 2d_physics/layer_3="wall"
+
+[rendering]
+
+reflections/bg_color=Color(0.14, 0.14, 0.14, 1)

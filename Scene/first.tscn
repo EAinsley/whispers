@@ -1,9 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvd7rwpd43gau"]
+[gd_scene load_steps=9 format=3 uid="uid://cvd7rwpd43gau"]
 
 [ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="1_2r13h"]
 [ext_resource type="PackedScene" uid="uid://drrqmt5bj4a7g" path="res://Prefabs/maze_generator.tscn" id="1_l0hei"]
+[ext_resource type="PackedScene" uid="uid://cboavjy5ve3m" path="res://Scene/sandbox.tscn" id="2_7la8d"]
 [ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="2_15j1c"]
 [ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="3_io2iq"]
+[ext_resource type="Script" path="res://Resources/item_resource.gd" id="6_kgfgy"]
+
+[sub_resource type="Resource" id="Resource_hjete"]
+script = ExtResource("6_kgfgy")
+icon = ExtResource("1_2r13h")
+name = "Name 1"
+id = "diary"
+size = 3
+index = 1
+item_description = "Date: April 3, 2021
+Date: May 9, 2021
+I’ve tried every possible way to seal it off, but it seems to have transcended the physical world. It is no longer confined to where we found it but is instead entering our consciousness through dreams. Every time someone remembers the existence of HilBerry Camp, its power grows. We must make everyone forget this place to completely lock it away.
+
+"
+
+[sub_resource type="Resource" id="Resource_w2csf"]
+script = ExtResource("6_kgfgy")
+icon = ExtResource("1_2r13h")
+name = "Name 3"
+id = "diary"
+size = 3
+index = 3
+item_description = "	Date: May 9, 2021
+I’ve tried every possible way to seal it off, but it seems to have transcended the physical world. It is no longer confined to where we found it but is instead entering our consciousness through dreams. Every time someone remembers the existence of HilBerry Camp, its power grows. We must make everyone forget this place to completely lock it away
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,11 +40,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="GameLayer" type="CanvasLayer" parent="." groups=["game_layer"]]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="GameLayer"]
 visible = false
-color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
 
 [node name="MarginalContainer" type="CenterContainer" parent="GameLayer"]
 anchors_preset = 15
@@ -39,6 +74,7 @@ size_flags_vertical = 3
 color = Color(0.93408, 0.93408, 0.93408, 1)
 
 [node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/TextureRect" instance=ExtResource("1_l0hei")]
+next_level = ExtResource("2_7la8d")
 
 [node name="TextureRect2" type="TextureRect" parent="GameLayer/MarginalContainer/VSeparator"]
 texture_filter = 1
@@ -55,7 +91,12 @@ move_speed = 100
 light_radius = 100
 
 [node name="Collectables" parent="GameLayer" instance=ExtResource("3_io2iq")]
-position = Vector2(747, 194)
+position = Vector2(685, 170)
+item = SubResource("Resource_hjete")
+
+[node name="Collectables2" parent="GameLayer" instance=ExtResource("3_io2iq")]
+position = Vector2(835, 174)
+item = SubResource("Resource_w2csf")
 
 [node name="UILayer" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = 2

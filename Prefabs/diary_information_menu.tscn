@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbs8dkismorib"]
+
+[ext_resource type="Script" path="res://Scripts/diary_information_menu.gd" id="1_j67ie"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j67ie")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.15
+anchor_right = 0.7
+anchor_bottom = 0.731
+offset_left = 0.447998
+offset_top = -0.312012
+offset_bottom = 0.311981
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemExplanation" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "Date: April 3, 2021
+
+HilBerry Camp was once my greatest achievement, attracting countless people to learn and explore. However, the discovery in the coral reef changed everything. I began seeing those indescribable things in my dreams. They aren’t just hallucinations but some kind of supernatural presence, gradually consuming our sanity.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ItemName" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+text = "Item Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.732
+anchor_right = 0.5
+anchor_bottom = 0.732
+offset_left = -25.0
+offset_top = -15.5
+offset_right = 25.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+
+[node name="LeftButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.732
+anchor_right = 0.5
+anchor_bottom = 0.732
+offset_left = -50.0
+offset_top = -15.5
+offset_right = -50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "<"
+
+[node name="RightButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.732
+anchor_right = 0.5
+anchor_bottom = 0.732
+offset_left = 50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = ">"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

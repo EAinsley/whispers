@@ -1,6 +1,9 @@
 class_name ItemResorce
 extends Resource
 
-@export var icon:CompressedTexture2D
+@export var icon: CompressedTexture2D
 @export var name: String
-@export_multiline var description: String
+@export var id: String
+@export var size := 1
+@export var index: int = 1
+@export_multiline var item_description: String

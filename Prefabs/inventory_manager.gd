@@ -14,8 +14,13 @@ func _ready() -> void:
 		inventory_grid_container.add_child(grid)
 
 func add_item(item: ItemResorce) -> void:
-	print("add item: ", item)
-	item_list[item_count].item = item
+	if item.id != "":
+		for i in item_count:
+			if item_list[i].id == item.id:
+				item_list[i].set_item(item)
+				return
+	item_list[item_count].set_item(item)
 	print(item_list[item_count])
 	item_list[item_count].connect("gui_input", item_list[item_count]._on_margin_container_gui_input)
 	item_count += 1
+		
