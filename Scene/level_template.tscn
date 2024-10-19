@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvd7rwpd43gau"]
+[gd_scene load_steps=4 format=3 uid="uid://cvd7rwpd43gau"]
 
 [ext_resource type="PackedScene" uid="uid://drrqmt5bj4a7g" path="res://Prefabs/maze_generator.tscn" id="1_h3227"]
 [ext_resource type="PackedScene" uid="uid://cboavjy5ve3m" path="res://Scene/sandbox.tscn" id="2_u7rd0"]
-[ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="3_hn5sr"]
 [ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="4_moby3"]
 
 [node name="Control" type="Control"]
@@ -26,6 +25,7 @@ color = Color(0, 0, 0, 1)
 [node name="GameLayer" type="CanvasLayer" parent="." groups=["game_layer"]]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="GameLayer"]
+visible = false
 color = Color(0.0475577, 0.0475576, 0.0475576, 1)
 
 [node name="MarginalContainer" type="CenterContainer" parent="GameLayer"]
@@ -36,11 +36,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VSeparator" type="HBoxContainer" parent="GameLayer/MarginalContainer"]
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 
 [node name="LeftScene" type="ColorRect" parent="GameLayer/MarginalContainer/VSeparator"]
 texture_filter = 1
-custom_minimum_size = Vector2(532, 532)
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -55,10 +56,9 @@ custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("3_hn5sr")
 
 [node name="player" parent="GameLayer" instance=ExtResource("4_moby3")]
-position = Vector2(70, 70)
+position = Vector2(83, 84)
 collision_mask = 4
 move_speed = 100
 light_radius = 100

@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfp6cj6r6ts4r"]
+
+[ext_resource type="Script" path="res://Scripts/ending.gd" id="1_0tnsw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tnsw")
+true_end = Array[String](["You’ve taken all the key items and memory fragments, ensuring that no one will ever be able to remember the existence of HilBerry Camp.", "The villagers remain in their deep sleep, still unconscious. You know that all the memories have been erased completely. The camp’s secrets will forever remain buried, and the power from the dream will no longer reach reality.", "Now, you are the only one left—the last person who knows the town’s secrets. Standing at the town’s edge, you feel its power gradually fading.", "But you also realize… for it to be sealed completely, the final memory must vanish. You look toward the distance, ready to face the ultimate destiny.", "It’s all about to end."])
+normal_end = Array[String](["You’ve completed the task. The villagers wake up from their comas, and everything returns to normal. Life in the town seems peaceful again, as if nothing ever happened.
+", "Sunlight shines on the streets of HilBerry Camp, and the villagers go about their daily lives, with smiles and laughter filling the air.
+", "But you feel a sense of unease. Something doesn’t seem completely resolved. Has the power from the dream truly been sealed?"])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextLable" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+text = "The villagers remain in their deep sleep, still unconscious. You know that all the memories have been erased completely. The camp’s secrets will forever remain buried, and the power from the dream will no longer reach reality."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

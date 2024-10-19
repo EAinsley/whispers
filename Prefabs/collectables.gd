@@ -20,7 +20,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func create_item_menu() -> void:
 	if !item:
 		return
-	if item.id == "":
+	if item.is_explicit:
 		var item_menu: ItemInformationMenu = item_menu_scene.instantiate()
 		get_tree().get_first_node_in_group("ui_layer").add_child(item_menu)
 		item_menu.set_item(item)

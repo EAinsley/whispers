@@ -1,27 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu1oh4bod1qn5"]
+[gd_scene load_steps=4 format=3 uid="uid://cu1oh4bod1qn5"]
 
 [ext_resource type="Script" path="res://Prefabs/collectables.gd" id="1_ernxu"]
 [ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="1_vr34v"]
-[ext_resource type="Script" path="res://Resources/item_resource.gd" id="3_vg2l4"]
-
-[sub_resource type="Resource" id="Resource_7jp8y"]
-script = ExtResource("3_vg2l4")
-icon = ExtResource("1_vr34v")
-name = "Item 1"
-id = ""
-size = 1
-index = 1
-item_description = ""
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cnhv"]
-size = Vector2(131, 132)
+size = Vector2(65.5, 96.5)
 
 [node name="Collectables" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
 input_pickable = true
 script = ExtResource("1_ernxu")
-item = SubResource("Resource_7jp8y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vr34v")

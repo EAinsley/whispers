@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://confiukppg0t3"]
+
+[ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_v3o7s"]
+[ext_resource type="Texture2D" uid="uid://i1jawc26cf41" path="res://Assets/Arts/Scene_Lab/Scene_Lab02.png" id="2_qba33"]
+[ext_resource type="PackedScene" uid="uid://dfp6cj6r6ts4r" path="res://Scene/ending.tscn" id="2_yr4eb"]
+[ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="3_b5bwg"]
+[ext_resource type="Texture2D" uid="uid://11jhro0ofvow" path="res://Assets/Arts/Scene_Lab/Lab_item01.png" id="5_0627t"]
+[ext_resource type="Script" path="res://Resources/item_resource.gd" id="5_cf7mm"]
+
+[sub_resource type="Resource" id="Resource_416r7"]
+script = ExtResource("5_cf7mm")
+icon = ExtResource("5_0627t")
+name = "Name 0"
+id = ""
+size = 1
+index = 1
+item_description = ""
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6k"]
+size = Vector2(70.5, 92.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xkbbi"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="Resource" id="Resource_5plfh"]
+script = ExtResource("5_cf7mm")
+icon = SubResource("CompressedTexture2D_xkbbi")
+name = "Name 1"
+id = "da"
+size = 2
+index = 1
+item_description = ""
+is_explicit = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cv6jv"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="Resource" id="Resource_w70ld"]
+script = ExtResource("5_cf7mm")
+icon = SubResource("CompressedTexture2D_xkbbi")
+name = "Name 2"
+id = "da"
+size = 2
+index = 2
+item_description = ""
+is_explicit = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_shbr7"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="Control" instance=ExtResource("1_v3o7s")]
+
+[node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
+next_level = ExtResource("2_yr4eb")
+
+[node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
+texture = ExtResource("2_qba33")
+expand_mode = 1
+
+[node name="player" parent="GameLayer" index="2"]
+position = Vector2(85, 87)
+
+[node name="Collectables" parent="GameLayer" index="3" instance=ExtResource("3_b5bwg")]
+position = Vector2(659, 158)
+item = SubResource("Resource_416r7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables" index="0"]
+position = Vector2(5.50001, 10.7199)
+scale = Vector2(0.156626, 0.136274)
+texture = ExtResource("5_0627t")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables" index="1"]
+position = Vector2(5.75, 10.75)
+shape = SubResource("RectangleShape2D_cfc6k")
+
+[node name="Collectables2" parent="GameLayer" index="4" instance=ExtResource("3_b5bwg")]
+position = Vector2(665, 302)
+item = SubResource("Resource_5plfh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables2" index="0"]
+position = Vector2(3.00001, -3)
+scale = Vector2(0.515625, 0.5)
+texture = SubResource("CompressedTexture2D_cv6jv")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables2" index="1"]
+position = Vector2(3.25, -3.25)
+
+[node name="Collectables3" parent="GameLayer" index="5" instance=ExtResource("3_b5bwg")]
+position = Vector2(809, 164)
+item = SubResource("Resource_w70ld")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables3" index="0"]
+position = Vector2(3.00001, -3)
+scale = Vector2(0.515625, 0.5)
+texture = SubResource("CompressedTexture2D_shbr7")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables3" index="1"]
+position = Vector2(3.25, -3.25)
+
+[editable path="GameLayer/Collectables"]
+[editable path="GameLayer/Collectables2"]
+[editable path="GameLayer/Collectables3"]

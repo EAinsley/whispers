@@ -7,3 +7,4 @@ extends Resource
 @export var size := 1
 @export var index: int = 1
 @export_multiline var item_description: String
+@export var is_explicit := false

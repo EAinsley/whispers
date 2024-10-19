@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var detection_area_size: CollisionShape2D = $LightOnRight/DetectionArea/DetectionAreaSize
 
 func _ready() -> void:
-	light_on_right.position.x = light_on_left.position.x + (get_viewport().size.x / 2)
+	light_on_right.position.x = light_on_left.position.x + (500)
 	light_on_right.position.y = light_on_left.position.y
 	light_on_left.texture_scale = float(light_radius)/32.
 	light_on_right.texture_scale = float(light_radius)/32.
