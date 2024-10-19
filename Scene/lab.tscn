@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://confiukppg0t3"]
+[gd_scene load_steps=28 format=3 uid="uid://confiukppg0t3"]
 
 [ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_v3o7s"]
 [ext_resource type="Texture2D" uid="uid://i1jawc26cf41" path="res://Assets/Arts/Scene_Lab/Scene_Lab02.png" id="2_qba33"]
@@ -6,50 +6,108 @@
 [ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="3_b5bwg"]
 [ext_resource type="Texture2D" uid="uid://11jhro0ofvow" path="res://Assets/Arts/Scene_Lab/Lab_item01.png" id="5_0627t"]
 [ext_resource type="Script" path="res://Resources/item_resource.gd" id="5_cf7mm"]
+[ext_resource type="Texture2D" uid="uid://cwfpa2s1h5g1f" path="res://Assets/Arts/Scene_Lab/Scene_Lab01.png" id="7_jwlit"]
+[ext_resource type="Texture2D" uid="uid://c10p4kjybv1pe" path="res://Assets/Arts/Scene_Lab/Lab_item03.png" id="8_i14k0"]
+[ext_resource type="Texture2D" uid="uid://cxqe467mnv305" path="res://Assets/Arts/Scene_Lab/Lab_item04.png" id="8_ql3pf"]
+[ext_resource type="Texture2D" uid="uid://copk5w1m4ynhv" path="res://Assets/Arts/Scene_Lab/Lab_item02.png" id="9_hn2js"]
+[ext_resource type="Texture2D" uid="uid://drbd53s4haski" path="res://Assets/Arts/Scene_Lab/Lab_item05_1.png" id="11_r11ew"]
+[ext_resource type="Texture2D" uid="uid://c1r8mtbvvmk6c" path="res://Assets/Arts/Scene_Lab/Lab_item05_5.png" id="12_665f8"]
+[ext_resource type="Texture2D" uid="uid://cf6gdkmssl84v" path="res://Assets/Arts/Scene_Lab/Lab_item05_3.png" id="13_462kj"]
 
-[sub_resource type="Resource" id="Resource_416r7"]
+[sub_resource type="Resource" id="Resource_duwr2"]
 script = ExtResource("5_cf7mm")
 icon = ExtResource("5_0627t")
-name = "Name 0"
+name = "Coral"
 id = ""
 size = 1
 index = 1
-item_description = ""
+item_description = "This is the coral we grabbed when we were retrieving other things. It’s beautiful; we were planning to use it as decoration for the lab."
 is_explicit = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6k"]
-size = Vector2(70.5, 92.5)
+size = Vector2(106, 162)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xkbbi"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="Resource" id="Resource_c6xbm"]
+script = ExtResource("5_cf7mm")
+icon = ExtResource("8_ql3pf")
+name = "Mutated crawling creature"
+id = ""
+size = 1
+index = 1
+item_description = "I was the one who fished this little guy up. It didn’t look like something from Earth… Uh, things that grow like this are pretty rare, aren’t they? I’ll study it more once the town’s crisis is over… What crisis was it again?"
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scj24"]
+size = Vector2(129, 46.4553)
 
 [sub_resource type="Resource" id="Resource_5plfh"]
 script = ExtResource("5_cf7mm")
-icon = SubResource("CompressedTexture2D_xkbbi")
-name = "Name 1"
-id = "da"
-size = 2
+icon = ExtResource("8_i14k0")
+name = "Octopus tentacle"
+id = ""
+size = 1
 index = 1
-item_description = ""
-is_explicit = false
+item_description = "Yes, that’s it! This thing jumped onto me back then… Uh, why am I so scared of it?"
+is_explicit = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cv6jv"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnpl4"]
+size = Vector2(54, 38)
 
-[sub_resource type="Resource" id="Resource_w70ld"]
+[sub_resource type="Resource" id="Resource_r4kfu"]
 script = ExtResource("5_cf7mm")
-icon = SubResource("CompressedTexture2D_xkbbi")
-name = "Name 2"
-id = "da"
-size = 2
-index = 2
-item_description = ""
+icon = ExtResource("9_hn2js")
+name = "Petri dish"
+id = ""
+size = 1
+index = 1
+item_description = "Oh right, I was the one managing this petri dish at the time. The thing that grew inside it… What did it looks like again? Uh… What are you holding in your hand?"
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wjs3"]
+size = Vector2(39, 22)
+
+[sub_resource type="Resource" id="Resource_tive3"]
+script = ExtResource("5_cf7mm")
+icon = ExtResource("11_r11ew")
+name = "Experiment Records (XJ-47) Entry 6"
+id = "0"
+size = 6
+index = 6
+item_description = "The proposal to terminate the experiment has been submitted. But the traces of it still linger in our consciousness…"
 is_explicit = false
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_shbr7"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41cv2"]
+size = Vector2(36.0757, 45.7523)
+
+[sub_resource type="Resource" id="Resource_lqg4c"]
+script = ExtResource("5_cf7mm")
+icon = ExtResource("12_665f8")
+name = "Experiment Records (XJ-47) Entry 4"
+id = "0"
+size = 6
+index = 4
+item_description = "Some trainees have been taken over! The doctors are helpless. Their dreams are getting deeper, and something is invading their minds. The sleepwalkers seem to be searching for something—they’ve already been affected! We can’t continue the exploration any longer!"
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw5ub"]
+size = Vector2(33.9265, 26.2825)
+
+[sub_resource type="Resource" id="Resource_7ec65"]
+script = ExtResource("5_cf7mm")
+name = "Experiment Records (XJ-47) Entry 3"
+id = "0"
+size = 6
+index = 3
+item_description = "Dr. S has begun to question the risks of continuing the experiment and has proposed sealing it off, but the suggestion has not yet been accepted. Some team members have started seeing the town in their dreams, and the dream version of the town is becoming more and more like the real HilBerry Camp. This is no longer just a scientific issue."
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hssff"]
+size = Vector2(23.3704, 31)
 
 [node name="Control" instance=ExtResource("1_v3o7s")]
+
+[node name="CanvasModulate" parent="GameLayer" index="0"]
+visible = true
 
 [node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
 next_level = ExtResource("2_yr4eb")
@@ -61,46 +119,127 @@ expand_mode = 1
 [node name="player" parent="GameLayer" index="2"]
 position = Vector2(85, 87)
 
-[node name="Collectables" parent="GameLayer" index="3" instance=ExtResource("3_b5bwg")]
-position = Vector2(659, 158)
-item = SubResource("Resource_416r7")
+[node name="SceneLab01" type="Sprite2D" parent="GameLayer" index="3"]
+process_mode = 4
+visible = false
+modulate = Color(1, 1, 1, 0.380392)
+position = Vector2(827, 326)
+scale = Vector2(0.251125, 0.251125)
+texture = ExtResource("7_jwlit")
+
+[node name="Collectables" type="Node2D" parent="GameLayer" index="4"]
+
+[node name="ExplicitCollectables" type="Node2D" parent="GameLayer/Collectables" index="0"]
+
+[node name="Collectables4" parent="GameLayer/Collectables/ExplicitCollectables" index="0" instance=ExtResource("3_b5bwg")]
+position = Vector2(1004, 464)
+item = SubResource("Resource_duwr2")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="GameLayer/Collectables" index="0"]
-position = Vector2(5.50001, 10.7199)
-scale = Vector2(0.156626, 0.136274)
+[node name="Sprite2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables4" index="0"]
+position = Vector2(28, 38.5)
+scale = Vector2(0.245783, 0.242921)
 texture = ExtResource("5_0627t")
 
-[node name="CollisionShape2D" parent="GameLayer/Collectables" index="1"]
-position = Vector2(5.75, 10.75)
+[node name="CollisionShape2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables4" index="1"]
+position = Vector2(26, 36)
 shape = SubResource("RectangleShape2D_cfc6k")
 
-[node name="Collectables2" parent="GameLayer" index="4" instance=ExtResource("3_b5bwg")]
-position = Vector2(665, 302)
+[node name="Collectables3" parent="GameLayer/Collectables/ExplicitCollectables" index="1" instance=ExtResource("3_b5bwg")]
+position = Vector2(677, 127)
+item = SubResource("Resource_c6xbm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables3" index="0"]
+position = Vector2(1.5, 17)
+scale = Vector2(0.257211, 0.261905)
+texture = ExtResource("8_ql3pf")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables3" index="1"]
+position = Vector2(1.64417, 11.4707)
+rotation = 0.435985
+shape = SubResource("RectangleShape2D_scj24")
+
+[node name="Collectables2" parent="GameLayer/Collectables/ExplicitCollectables" index="2" instance=ExtResource("3_b5bwg")]
+position = Vector2(1032, 314)
 item = SubResource("Resource_5plfh")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="GameLayer/Collectables2" index="0"]
-position = Vector2(3.00001, -3)
-scale = Vector2(0.515625, 0.5)
-texture = SubResource("CompressedTexture2D_cv6jv")
+[node name="Sprite2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables2" index="0"]
+position = Vector2(13, 6.50001)
+scale = Vector2(0.245283, 0.243056)
+texture = ExtResource("8_i14k0")
 
-[node name="CollisionShape2D" parent="GameLayer/Collectables2" index="1"]
-position = Vector2(3.25, -3.25)
+[node name="CollisionShape2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables2" index="1"]
+position = Vector2(14, 6)
+shape = SubResource("RectangleShape2D_wnpl4")
 
-[node name="Collectables3" parent="GameLayer" index="5" instance=ExtResource("3_b5bwg")]
-position = Vector2(809, 164)
-item = SubResource("Resource_w70ld")
+[node name="Collectables1" parent="GameLayer/Collectables/ExplicitCollectables" index="3" instance=ExtResource("3_b5bwg")]
+position = Vector2(792, 458)
+item = SubResource("Resource_r4kfu")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="GameLayer/Collectables3" index="0"]
-position = Vector2(3.00001, -3)
-scale = Vector2(0.515625, 0.5)
-texture = SubResource("CompressedTexture2D_shbr7")
+[node name="Sprite2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables1" index="0"]
+position = Vector2(-6.00001, -8.5)
+scale = Vector2(0.25, 0.244186)
+texture = ExtResource("9_hn2js")
 
-[node name="CollisionShape2D" parent="GameLayer/Collectables3" index="1"]
-position = Vector2(3.25, -3.25)
+[node name="CollisionShape2D" parent="GameLayer/Collectables/ExplicitCollectables/Collectables1" index="1"]
+position = Vector2(-5.5, -9)
+shape = SubResource("RectangleShape2D_8wjs3")
 
-[editable path="GameLayer/Collectables"]
-[editable path="GameLayer/Collectables2"]
-[editable path="GameLayer/Collectables3"]
+[node name="InexplicitCollectables" type="Node2D" parent="GameLayer/Collectables" index="1"]
+
+[node name="Collectables" parent="GameLayer/Collectables/InexplicitCollectables" index="0" instance=ExtResource("3_b5bwg")]
+position = Vector2(598, 225)
+item = SubResource("Resource_tive3")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables" index="0"]
+position = Vector2(-9.87499, 18.5179)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_r11ew")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables" index="1"]
+position = Vector2(-4.55353, 16.8014)
+rotation = 0.593781
+shape = SubResource("RectangleShape2D_41cv2")
+
+[node name="Collectables2" parent="GameLayer/Collectables/InexplicitCollectables" index="1" instance=ExtResource("3_b5bwg")]
+position = Vector2(841, 234)
+rotation = -0.124788
+item = SubResource("Resource_lqg4c")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables2" index="0"]
+position = Vector2(-47.8535, 57.4242)
+scale = Vector2(0.263792, 0.263792)
+texture = ExtResource("12_665f8")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables2" index="1"]
+position = Vector2(-49.1497, 60.0737)
+rotation = -0.669968
+shape = SubResource("RectangleShape2D_iw5ub")
+
+[node name="Collectables3" parent="GameLayer/Collectables/InexplicitCollectables" index="2" instance=ExtResource("3_b5bwg")]
+position = Vector2(862, 471)
+item = SubResource("Resource_7ec65")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables3" index="0"]
+position = Vector2(-4.65791, -6.49999)
+scale = Vector2(0.254386, 0.254386)
+texture = ExtResource("13_462kj")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/InexplicitCollectables/Collectables3" index="1"]
+position = Vector2(-2.64355, -6.12491)
+rotation = -0.791098
+shape = SubResource("RectangleShape2D_hssff")
+
+[editable path="GameLayer/Collectables/ExplicitCollectables/Collectables4"]
+[editable path="GameLayer/Collectables/ExplicitCollectables/Collectables3"]
+[editable path="GameLayer/Collectables/ExplicitCollectables/Collectables2"]
+[editable path="GameLayer/Collectables/ExplicitCollectables/Collectables1"]
+[editable path="GameLayer/Collectables/InexplicitCollectables/Collectables"]
+[editable path="GameLayer/Collectables/InexplicitCollectables/Collectables2"]
+[editable path="GameLayer/Collectables/InexplicitCollectables/Collectables3"]
