@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvd7rwpd43gau"]
+
+[ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="1_2r13h"]
+[ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="2_15j1c"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ldxqs"]
+polygon = PackedVector2Array(571, 1, 578, 1460, 593, 1445, 587, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shja7"]
+size = Vector2(25, 660)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VSeparator"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_2r13h")
+
+[node name="TextureRect2" type="TextureRect" parent="VSeparator"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_2r13h")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="player" parent="." instance=ExtResource("2_15j1c")]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(707, 1)
+occluder = SubResource("OccluderPolygon2D_ldxqs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(707, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580.5, 320)
+shape = SubResource("RectangleShape2D_shja7")
