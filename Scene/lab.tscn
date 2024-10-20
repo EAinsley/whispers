@@ -117,7 +117,6 @@ next_level = ExtResource("2_yr4eb")
 
 [node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
 texture = ExtResource("2_qba33")
-expand_mode = 1
 
 [node name="player" parent="GameLayer" index="2"]
 position = Vector2(85, 87)

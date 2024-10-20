@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbsgj3mraf8ka"]
+
+[ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_04vq6"]
+[ext_resource type="Texture2D" uid="uid://4keqs0whwsms" path="res://Assets/Arts/Scene_School/Scene_School02.png" id="2_vsn81"]
+
+[node name="Control" instance=ExtResource("1_04vq6")]
+
+[node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
+next_level = null
+
+[node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
+texture = ExtResource("2_vsn81")

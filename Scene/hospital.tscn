@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://77klwrvrjs74"]
+
+[ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_055ke"]
+[ext_resource type="Texture2D" uid="uid://svttaumcuoge" path="res://Assets/Arts/Scene_Hospital/Scene_Hospital02.png" id="2_t6ms6"]
+
+[node name="Control" instance=ExtResource("1_055ke")]
+
+[node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
+texture = ExtResource("2_t6ms6")
