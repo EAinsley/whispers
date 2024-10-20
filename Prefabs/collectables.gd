@@ -7,6 +7,7 @@ var is_clickable := false
 var item_menu_scene: PackedScene = preload("res://Prefabs/item_information_menu.tscn")
 var diary_menu_scene: PackedScene = preload("res://Prefabs/diary_information_menu.tscn")
 @onready var nearby_sound: AudioStreamPlayer2D = %NearbySound
+
 	
 func set_clickable(clickable):
 	is_clickable = clickable
@@ -45,3 +46,13 @@ func _on_nearby_sound_finished() -> void:
 		return
 	nearby_sound.pitch_scale = randf() + 0.5
 	nearby_sound.play()
+
+
+func _on_mouse_entered() -> void:
+	if !is_clickable:
+		return
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

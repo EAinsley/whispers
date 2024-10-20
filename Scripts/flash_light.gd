@@ -1,7 +1,7 @@
 extends PointLight2D
 
 var time_elapes:= 0.
-var speed = 5.
+var speed = 4.
 
 @onready var initial_energy = energy
 
