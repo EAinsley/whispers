@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://pa7eifdq62v0"]
+[gd_scene load_steps=8 format=3 uid="uid://pa7eifdq62v0"]
 
 [ext_resource type="Script" path="res://Scripts/exit.gd" id="1_gmcqw"]
 [ext_resource type="Texture2D" uid="uid://cgy21fw3kaxch" path="res://Scene/main.tres" id="2_uhp81"]
+[ext_resource type="PackedScene" uid="uid://ctb5w5mlw2857" path="res://Prefabs/scene_changer.tscn" id="3_d4nx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csdaf"]
 
@@ -47,25 +48,6 @@ range_layer_max = 1
 texture = ExtResource("2_uhp81")
 texture_scale = 3.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="BlanckScreen" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="SceneChanger" parent="." instance=ExtResource("3_d4nx8")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
