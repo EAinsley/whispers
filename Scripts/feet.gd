@@ -7,6 +7,9 @@ var feet_step_scene = preload("res://Prefabs/feet_step.tscn")
 @onready var timer: Timer = $Timer
 @onready var foot_steps: Node2D = $FootSteps
 
+@export var step_streams : Array[AudioStream]
+@onready var step_player: AudioStreamPlayer = $StepPlayer
+
 var last_rotation: float = 0.
 
 func step() -> void:
@@ -18,6 +21,9 @@ func step() -> void:
 	foot_step.rotation = rotation
 	
 	is_left = !is_left
+	step_player.stream = step_streams.pick_random()
+	step_player.pitch_scale = randf() + 0.5
+	step_player.play()
 
 func _process(delta: float) -> void:
 	if (timer.is_stopped() and

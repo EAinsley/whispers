@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca8oagds2fn3p"]
+[gd_scene load_steps=14 format=3 uid="uid://ca8oagds2fn3p"]
 
 [ext_resource type="Script" path="res://Prefabs/player.gd" id="1_hdf4t"]
 [ext_resource type="Script" path="res://Scripts/feet.gd" id="2_8qqh1"]
+[ext_resource type="AudioStream" uid="uid://dtulohdo3b2x6" path="res://Assets/Sounds/SFX/step1.wav" id="3_126sd"]
 [ext_resource type="PackedScene" uid="uid://dsg6d0eks3ihj" path="res://Prefabs/feet_step.tscn" id="3_dw4rp"]
+[ext_resource type="AudioStream" uid="uid://b5niljw08uljp" path="res://Assets/Sounds/SFX/step2.wav" id="4_xphgb"]
+[ext_resource type="AudioStream" uid="uid://b0xctfujen4eq" path="res://Assets/Sounds/SFX/step3.wav" id="5_7ripi"]
+[ext_resource type="AudioStream" uid="uid://dmep7kce5x16e" path="res://Assets/Sounds/SFX/step4.wav" id="6_rkbge"]
 
 [sub_resource type="Gradient" id="Gradient_usky8"]
 offsets = PackedFloat32Array(0, 0.545455, 0.623377, 1)
@@ -81,6 +85,7 @@ shape = SubResource("CircleShape2D_lp4m5")
 
 [node name="Feet" type="Node2D" parent="."]
 script = ExtResource("2_8qqh1")
+step_streams = Array[AudioStream]([ExtResource("3_126sd"), ExtResource("4_xphgb"), ExtResource("5_7ripi"), ExtResource("6_rkbge")])
 
 [node name="Timer" type="Timer" parent="Feet"]
 wait_time = 0.5
@@ -88,6 +93,8 @@ autostart = true
 
 [node name="FootSteps" parent="Feet" instance=ExtResource("3_dw4rp")]
 is_transiant = false
+
+[node name="StepPlayer" type="AudioStreamPlayer" parent="Feet"]
 
 [connection signal="body_entered" from="LightOnRight/DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="LightOnRight/DetectionArea" to="." method="_on_detection_area_body_exited"]
