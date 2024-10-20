@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca8oagds2fn3p"]
+[gd_scene load_steps=10 format=3 uid="uid://ca8oagds2fn3p"]
 
 [ext_resource type="Script" path="res://Prefabs/player.gd" id="1_hdf4t"]
+[ext_resource type="Script" path="res://Scripts/feet.gd" id="2_8qqh1"]
+[ext_resource type="PackedScene" uid="uid://dsg6d0eks3ihj" path="res://Prefabs/feet_step.tscn" id="3_dw4rp"]
 
 [sub_resource type="Gradient" id="Gradient_usky8"]
 offsets = PackedFloat32Array(0, 0.545455, 0.623377, 1)
@@ -32,6 +34,7 @@ motion_mode = 1
 script = ExtResource("1_hdf4t")
 
 [node name="PlayerVisual" type="TextureRect" parent="."]
+visible = false
 light_mask = 2
 visibility_layer = 2
 anchors_preset = 8
@@ -71,8 +74,21 @@ input_pickable = false
 [node name="DetectionAreaSize" type="CollisionShape2D" parent="LightOnRight/DetectionArea"]
 shape = SubResource("CircleShape2D_bgtyi")
 
+[node name="Ear" type="AudioListener2D" parent="LightOnRight"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lp4m5")
 
+[node name="Feet" type="Node2D" parent="."]
+script = ExtResource("2_8qqh1")
+
+[node name="Timer" type="Timer" parent="Feet"]
+wait_time = 0.5
+autostart = true
+
+[node name="FootSteps" parent="Feet" instance=ExtResource("3_dw4rp")]
+is_transiant = false
+
 [connection signal="body_entered" from="LightOnRight/DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="LightOnRight/DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="Feet/Timer" to="Feet" method="_on_timer_timeout"]

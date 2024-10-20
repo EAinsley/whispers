@@ -1,19 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://pa7eifdq62v0"]
+[gd_scene load_steps=7 format=3 uid="uid://pa7eifdq62v0"]
 
 [ext_resource type="Script" path="res://Scripts/exit.gd" id="1_gmcqw"]
 [ext_resource type="Texture2D" uid="uid://cgy21fw3kaxch" path="res://Scene/main.tres" id="2_uhp81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csdaf"]
 
+[sub_resource type="Curve" id="Curve_1rwml"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yfhif"]
+curve = SubResource("Curve_1rwml")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g3f5k"]
 particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
+angle_min = -60.0
+angle_max = 60.0
+velocity_pivot = Vector3(0, -1, 0)
+direction = Vector3(0, -1, 0)
 spread = 90.0
-initial_velocity_min = 0.1
-initial_velocity_max = 0.5
-gravity = Vector3(0, -1, 0)
-scale_min = 0.1
-scale_max = 0.3
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+damping_min = 5.0
+damping_max = 6.0
+scale_min = 3.0
+scale_max = 5.0
+emission_curve = SubResource("CurveTexture_yfhif")
 
 [node name="Exit" type="Area2D"]
 collision_layer = 0
@@ -23,10 +35,16 @@ script = ExtResource("1_gmcqw")
 shape = SubResource("RectangleShape2D_csdaf")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 10
 process_material = SubResource("ParticleProcessMaterial_g3f5k")
-texture = ExtResource("2_uhp81")
-lifetime = 3.0
+lifetime = 5.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.4505, 0.81005, 0.85, 1)
+energy = 1.5
+range_layer_min = 1
+range_layer_max = 1
+texture = ExtResource("2_uhp81")
+texture_scale = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

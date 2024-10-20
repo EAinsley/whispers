@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsg6d0eks3ihj"]
+
+[ext_resource type="Texture2D" uid="uid://d7ulj5k0n1ae" path="res://Assets/Arts/Feet/left_feet.png" id="1_hwd6f"]
+[ext_resource type="Script" path="res://Scripts/feet_step.gd" id="2_8bt2c"]
+[ext_resource type="Texture2D" uid="uid://xk7rdo5n5ya7" path="res://Assets/Arts/Feet/right_feet.png" id="3_ho0eo"]
+
+[node name="FootSteps" type="Node2D"]
+scale = Vector2(0.04, 0.04)
+script = ExtResource("2_8bt2c")
+
+[node name="LeftStep" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.78814e-07, -75)
+rotation = 1.54565
+texture = ExtResource("1_hwd6f")
+
+[node name="RightStep" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.74623e-09, 75)
+rotation = 1.58685
+texture = ExtResource("3_ho0eo")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvd7rwpd43gau"]
+[gd_scene load_steps=5 format=3 uid="uid://cvd7rwpd43gau"]
 
 [ext_resource type="PackedScene" uid="uid://drrqmt5bj4a7g" path="res://Prefabs/maze_generator.tscn" id="1_h3227"]
 [ext_resource type="PackedScene" uid="uid://cboavjy5ve3m" path="res://Scene/sandbox.tscn" id="2_u7rd0"]
 [ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="4_moby3"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5khwu"]
+polygon = PackedVector2Array(570, 0, 570, 650, 580, 650, 580, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -60,8 +63,11 @@ size_flags_vertical = 3
 [node name="player" parent="GameLayer" instance=ExtResource("4_moby3")]
 position = Vector2(83, 84)
 collision_mask = 4
-move_speed = 100
+move_speed = 50
 light_radius = 100
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="GameLayer"]
+occluder = SubResource("OccluderPolygon2D_5khwu")
 
 [node name="UILayer" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = 2

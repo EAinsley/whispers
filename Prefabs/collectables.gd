@@ -6,16 +6,24 @@ extends StaticBody2D
 var is_clickable := false
 var item_menu_scene: PackedScene = preload("res://Prefabs/item_information_menu.tscn")
 var diary_menu_scene: PackedScene = preload("res://Prefabs/diary_information_menu.tscn")
+@onready var nearby_sound: AudioStreamPlayer2D = %NearbySound
 	
 func set_clickable(clickable):
 	is_clickable = clickable
+	if !nearby_sound.stream:
+		return
+		
+	if is_clickable:
+		nearby_sound.play()
+	else:
+		nearby_sound.stop()
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if is_clickable and event.is_action_pressed("click"):
 		create_item_menu()
 		Inventory.add_item(item)
-		queue_free()
+		visible = false
 
 func create_item_menu() -> void:
 	if !item:
@@ -29,3 +37,11 @@ func create_item_menu() -> void:
 		get_tree().get_first_node_in_group("ui_layer").add_child(diary_menu)
 		diary_menu.set_item_onetime(item)
 		
+
+
+func _on_nearby_sound_finished() -> void:
+	if !visible:
+		queue_free()
+		return
+	nearby_sound.pitch_scale = randf() + 0.5
+	nearby_sound.play()

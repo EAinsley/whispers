@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var move_speed := 200
@@ -6,6 +7,7 @@ extends CharacterBody2D
 @onready var light_on_right: PointLight2D = $LightOnRight
 @onready var light_on_left: PointLight2D = $LightOnLeft
 @onready var detection_area_size: CollisionShape2D = $LightOnRight/DetectionArea/DetectionAreaSize
+@onready var ear: AudioListener2D = $LightOnRight/Ear
 
 func _ready() -> void:
 	light_on_right.position.x = light_on_left.position.x + (500)
@@ -14,6 +16,7 @@ func _ready() -> void:
 	light_on_right.texture_scale = float(light_radius)/32.
 	
 	detection_area_size.shape.radius = light_radius
+	ear.make_current()
 
 
 func _physics_process(_delta: float) -> void:

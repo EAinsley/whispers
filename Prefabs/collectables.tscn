@@ -15,4 +15,9 @@ texture = ExtResource("1_vr34v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 1)
 
+[node name="NearbySound" type="AudioStreamPlayer2D" parent="CollisionShape2D"]
+unique_name_in_owner = true
+position = Vector2(-1.5, -1)
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="finished" from="CollisionShape2D/NearbySound" to="." method="_on_nearby_sound_finished"]
