@@ -71,3 +71,6 @@ occluder = SubResource("OccluderPolygon2D_5khwu")
 
 [node name="UILayer" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = 2
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+autoplay = true

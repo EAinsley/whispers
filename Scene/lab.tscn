@@ -109,6 +109,9 @@ size = Vector2(23.3704, 31)
 
 [node name="Control" instance=ExtResource("1_v3o7s")]
 
+[node name="CanvasModulate" parent="GameLayer" index="0"]
+visible = true
+
 [node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
 next_level = ExtResource("2_yr4eb")
 

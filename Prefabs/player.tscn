@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ca8oagds2fn3p"]
+[gd_scene load_steps=15 format=3 uid="uid://ca8oagds2fn3p"]
 
 [ext_resource type="Script" path="res://Prefabs/player.gd" id="1_hdf4t"]
 [ext_resource type="Script" path="res://Scripts/feet.gd" id="2_8qqh1"]
+[ext_resource type="Script" path="res://Scripts/flash_light.gd" id="2_btxmd"]
 [ext_resource type="AudioStream" uid="uid://dtulohdo3b2x6" path="res://Assets/Sounds/SFX/step1.wav" id="3_126sd"]
 [ext_resource type="PackedScene" uid="uid://dsg6d0eks3ihj" path="res://Prefabs/feet_step.tscn" id="3_dw4rp"]
 [ext_resource type="AudioStream" uid="uid://b5niljw08uljp" path="res://Assets/Sounds/SFX/step2.wav" id="4_xphgb"]
@@ -61,15 +62,17 @@ range_layer_min = 1
 range_layer_max = 1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_v448d")
+script = ExtResource("2_btxmd")
 
 [node name="LightOnRight" type="PointLight2D" parent="."]
 position = Vector2(1280, 0)
-energy = 1.5
+energy = 2.0
 range_layer_min = 1
 range_layer_max = 1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_v448d")
 texture_scale = 5.0
+script = ExtResource("2_btxmd")
 
 [node name="DetectionArea" type="Area2D" parent="LightOnRight"]
 collision_mask = 2
