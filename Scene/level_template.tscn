@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvd7rwpd43gau"]
+[gd_scene load_steps=6 format=3 uid="uid://cvd7rwpd43gau"]
 
 [ext_resource type="PackedScene" uid="uid://drrqmt5bj4a7g" path="res://Prefabs/maze_generator.tscn" id="1_h3227"]
+[ext_resource type="TileSet" uid="uid://bflwmbhf5nfoc" path="res://Resources/tile_set.tres" id="2_e6mn0"]
 [ext_resource type="PackedScene" uid="uid://cboavjy5ve3m" path="res://Scene/sandbox.tscn" id="2_u7rd0"]
 [ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="4_moby3"]
 
@@ -52,6 +53,7 @@ size_flags_vertical = 3
 color = Color(0.93408, 0.93408, 0.93408, 1)
 
 [node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" instance=ExtResource("1_h3227")]
+tile_set = ExtResource("2_e6mn0")
 next_level = ExtResource("2_u7rd0")
 
 [node name="RightScene" type="TextureRect" parent="GameLayer/MarginalContainer/VSeparator"]

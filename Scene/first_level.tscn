@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=4 uid="uid://dfamru0uxd88b"]
+
+[ext_resource type="PackedScene" uid="uid://pa7eifdq62v0" path="res://Prefabs/exit.tscn" id="2_o2nw6"]
+[ext_resource type="TileSet" uid="uid://bflwmbhf5nfoc" path="res://Resources/tile_set.tres" id="3_h2ktk"]
+[ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="3_mmqn1"]
+[ext_resource type="PackedScene" uid="uid://confiukppg0t3" path="res://Scene/lab.tscn" id="3_vbpfl"]
+[ext_resource type="PackedScene" uid="uid://bf0lmshl8pd51" path="res://Prefabs/enter_message.tscn" id="4_2a8e4"]
+[ext_resource type="Texture2D" uid="uid://6puo3llbglvm" path="res://Assets/Arts/UI/wasd.png" id="5_xwx2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1w4x"]
+size = Vector2(259.5, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mub8s"]
+size = Vector2(370, 130)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameLayer" type="CanvasLayer" parent="." groups=["game_layer"]]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="GameLayer"]
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+
+[node name="ColorRect" type="ColorRect" parent="GameLayer"]
+offset_left = 70.0
+offset_top = 272.0
+offset_right = 1096.0
+offset_bottom = 380.0
+color = Color(0.5106, 0.74, 0.60236, 1)
+
+[node name="MarginalContainer" type="CenterContainer" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player" parent="GameLayer" instance=ExtResource("3_mmqn1")]
+position = Vector2(92, 327)
+collision_mask = 4
+move_speed = 50
+light_radius = 100
+has_right = false
+
+[node name="Exit" parent="GameLayer" instance=ExtResource("2_o2nw6")]
+position = Vector2(1054, 343)
+next_level = ExtResource("3_vbpfl")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="GameLayer"]
+modulate = Color(0.091307, 0.221981, 0.19295, 1)
+tile_map_data = PackedByteArray("AAAGABEAAAACAAMAAAAGABAAAAAKAAcAAAAHABEAAAADAAwAAAAIABEAAAADAAwAAAAJABEAAAADAAwAAAAKABEAAAADAAwAAAALABEAAAADAAwAAAAMABEAAAADAAwAAAANABEAAAADAAwAAAAOABEAAAADAAwAAAAPABEAAAADAAwAAAAQABEAAAADAAwAAAARABEAAAADAAwAAAASABEAAAADAAwAAAATABEAAAADAAwAAAAUABEAAAADAAwAAAAVABEAAAADAAwAAAAWABEAAAADAAwAAAAXABEAAAADAAwAAAAYABEAAAADAAwAAAAZABEAAAADAAwAAAAaABEAAAADAAwAAAAbABEAAAADAAwAAAAcABEAAAADAAwAAAAdABEAAAADAAwAAAAeABEAAAADAAwAAAAfABEAAAADAAwAAAAgABEAAAADAAwAAAAhABEAAAADAAwAAAAiABEAAAADAAwAAAAjABEAAAADAAwAAAAkABEAAAADAAwAAAAlABEAAAADAAwAAAAmABEAAAADAAwAAAAnABEAAAADAAwAAAAoABEAAAADAAwAAAApABEAAAADAAwAAAAqABEAAAADAAwAAAArABEAAAADAAwAAAAsABEAAAADAAwAAAAtABEAAAADAAwAAAAuABEAAAADAAwAAAAvABEAAAADAAwAAAAwABEAAAADAAwAAAAxABEAAAADAAwAAAAyABEAAAADAAwAAAAzABEAAAADAAwAAAA0ABEAAAADAAwAAAA1ABEAAAADAAwAAAA2ABEAAAADAAwAAAA3ABEAAAADAAwAAAA4ABEAAAADAAwAAAA5ABEAAAADAAwAAAA6ABEAAAADAAwAAAA7ABEAAAADAAwAAAA8ABEAAAADAAwAAAA9ABEAAAADAAwAAAA+ABEAAAADAAwAAAA/ABEAAAADAAwAAABAABEAAAADAAwAAABBABEAAAADAAwAAAAFABEAAAADAAwAAAAEABEAAAAEAAoAAAAEABcAAAACAAwAAAAEABYAAAAIAAoAAAAEABUAAAAIAAoAAAAEABQAAAAIAAoAAAAEABMAAAAIAAoAAAAEABIAAAAIAAoAAABEABcAAAAEAAwAAABDABcAAAADAAwAAABCABcAAAADAAwAAABBABcAAAADAAwAAABAABcAAAADAAwAAAA/ABcAAAADAAwAAAA+ABcAAAADAAwAAAA9ABcAAAADAAwAAAA8ABcAAAADAAwAAAA7ABcAAAADAAwAAAA6ABcAAAADAAwAAAA5ABcAAAADAAwAAAA4ABcAAAADAAwAAAA3ABcAAAADAAwAAAA2ABcAAAADAAwAAAA1ABcAAAADAAwAAAA0ABcAAAADAAwAAAAzABcAAAADAAwAAAAyABcAAAADAAwAAAAxABcAAAADAAwAAAAwABcAAAADAAwAAAAvABcAAAADAAwAAAAuABcAAAADAAwAAAAtABcAAAADAAwAAAAsABcAAAADAAwAAAArABcAAAADAAwAAAAqABcAAAADAAwAAAApABcAAAADAAwAAAAoABcAAAADAAwAAAAnABcAAAADAAwAAAAmABcAAAADAAwAAAAlABcAAAADAAwAAAAkABcAAAADAAwAAAAjABcAAAADAAwAAAAiABcAAAADAAwAAAAhABcAAAADAAwAAAAgABcAAAADAAwAAAAfABcAAAADAAwAAAAeABcAAAADAAwAAAAdABcAAAADAAwAAAAcABcAAAADAAwAAAAbABcAAAADAAwAAAAaABcAAAADAAwAAAAZABcAAAADAAwAAAAYABcAAAADAAwAAAAXABcAAAADAAwAAAAWABcAAAADAAwAAAAVABcAAAADAAwAAAAUABcAAAADAAwAAAATABcAAAADAAwAAAASABcAAAADAAwAAAARABcAAAADAAwAAAAQABcAAAADAAwAAAAPABcAAAADAAwAAAAOABcAAAADAAwAAAANABcAAAADAAwAAAAMABcAAAADAAwAAAALABcAAAADAAwAAAAKABcAAAADAAwAAAAJABcAAAADAAwAAAAIABcAAAADAAwAAAAHABcAAAADAAwAAAAGABcAAAADAAwAAAAFABcAAAADAAwAAABEABEAAAACAAoAAABDABEAAAADAAwAAABCABEAAAADAAwAAABEABYAAAAIAAoAAABEABUAAAAIAAoAAABEABQAAAAIAAoAAABEABMAAAAIAAoAAABEABIAAAAIAAoAAAA=")
+tile_set = ExtResource("3_h2ktk")
+
+[node name="UILayer" type="CanvasLayer" parent="." groups=["ui_layer"]]
+layer = 2
+
+[node name="Message" parent="UILayer" instance=ExtResource("4_2a8e4")]
+show_duration = 8.0
+
+[node name="CollisionShape2D" parent="UILayer/Message/Area2D" index="0"]
+position = Vector2(84.25, 223)
+shape = SubResource("RectangleShape2D_n1w4x")
+
+[node name="Label" type="Label" parent="UILayer/Message"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Use"
+
+[node name="Label2" type="Label" parent="UILayer/Message"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -11.5
+offset_right = 168.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "to move"
+
+[node name="Wasd" type="Sprite2D" parent="UILayer/Message"]
+modulate = Color(0.733005, 0.733005, 0.733005, 1)
+position = Vector2(80, 89)
+scale = Vector2(0.148438, 0.148438)
+texture = ExtResource("5_xwx2i")
+
+[node name="Message2" parent="UILayer" instance=ExtResource("4_2a8e4")]
+offset_left = 335.0
+offset_top = 70.0
+offset_right = 556.0
+offset_bottom = 241.0
+show_duration = 8.0
+
+[node name="CollisionShape2D" parent="UILayer/Message2/Area2D" index="0"]
+position = Vector2(113, 255)
+shape = SubResource("RectangleShape2D_mub8s")
+
+[node name="Label" type="Label" parent="UILayer/Message2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "I need to find something..."
+
+[node name="Message3" parent="UILayer" instance=ExtResource("4_2a8e4")]
+offset_left = 573.0
+offset_top = 90.0
+offset_right = 794.0
+offset_bottom = 261.0
+show_duration = 8.0
+
+[node name="CollisionShape2D" parent="UILayer/Message3/Area2D" index="0"]
+position = Vector2(113, 255)
+shape = SubResource("RectangleShape2D_mub8s")
+
+[node name="Label" type="Label" parent="UILayer/Message3"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Listen Carefully...."
+
+[node name="Message4" parent="UILayer" instance=ExtResource("4_2a8e4")]
+offset_left = 775.0
+offset_top = 101.0
+offset_right = 996.0
+offset_bottom = 272.0
+show_duration = 8.0
+
+[node name="CollisionShape2D" parent="UILayer/Message4/Area2D" index="0"]
+position = Vector2(113, 255)
+shape = SubResource("RectangleShape2D_mub8s")
+
+[node name="Label" type="Label" parent="UILayer/Message4"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Don't be lost in their mind..."
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[editable path="UILayer/Message"]
+[editable path="UILayer/Message2"]
+[editable path="UILayer/Message3"]
+[editable path="UILayer/Message4"]

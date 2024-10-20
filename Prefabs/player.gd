@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var move_speed := 200
 @export var light_radius := 150
+@export var has_right := true
 
 @onready var light_on_right: PointLight2D = $LightOnRight
 @onready var light_on_left: PointLight2D = $LightOnLeft
@@ -17,6 +18,8 @@ func _ready() -> void:
 	
 	detection_area_size.shape.radius = light_radius
 	ear.make_current()
+	if !has_right:
+		light_on_right.visible = false
 
 
 func _physics_process(_delta: float) -> void:
