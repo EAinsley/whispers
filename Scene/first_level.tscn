@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://dfamru0uxd88b"]
+[gd_scene load_steps=10 format=4 uid="uid://dfamru0uxd88b"]
 
 [ext_resource type="PackedScene" uid="uid://pa7eifdq62v0" path="res://Prefabs/exit.tscn" id="2_o2nw6"]
+[ext_resource type="PackedScene" uid="uid://cbsgj3mraf8ka" path="res://Scene/school.tscn" id="3_c754i"]
 [ext_resource type="TileSet" uid="uid://bflwmbhf5nfoc" path="res://Resources/tile_set.tres" id="3_h2ktk"]
 [ext_resource type="PackedScene" uid="uid://ca8oagds2fn3p" path="res://Prefabs/player.tscn" id="3_mmqn1"]
-[ext_resource type="PackedScene" uid="uid://confiukppg0t3" path="res://Scene/lab.tscn" id="3_vbpfl"]
 [ext_resource type="PackedScene" uid="uid://bf0lmshl8pd51" path="res://Prefabs/enter_message.tscn" id="4_2a8e4"]
 [ext_resource type="Texture2D" uid="uid://6puo3llbglvm" path="res://Assets/Arts/UI/wasd.png" id="5_xwx2i"]
+[ext_resource type="AudioStream" uid="uid://c21pqj08xhphd" path="res://Assets/Sounds/BGM/forest.wav" id="7_28dfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1w4x"]
 size = Vector2(259.5, 167)
@@ -60,7 +61,7 @@ has_right = false
 
 [node name="Exit" parent="GameLayer" instance=ExtResource("2_o2nw6")]
 position = Vector2(1054, 343)
-next_level = ExtResource("3_vbpfl")
+next_level = ExtResource("3_c754i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="GameLayer"]
 modulate = Color(0.091307, 0.221981, 0.19295, 1)
@@ -176,6 +177,8 @@ grow_vertical = 2
 text = "Don't be lost in their mind..."
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_28dfi")
+volume_db = -5.0
 autoplay = true
 
 [editable path="UILayer/Message"]

@@ -1,6 +1,8 @@
 class_name DiaryInformationMenu
 extends Control
 
+
+
 var page_count: int
 var current_page: int = 0
 var names: Array[String]
@@ -10,6 +12,7 @@ var descriptions: Array[String]
 @onready var item_name: Label = %ItemName
 @onready var left_button: Button = %LeftButton
 @onready var right_button: Button = %RightButton
+
 
 func set_item(page_count_: int, names_: Array[String], descriptions_: Array[String]) -> void:
 	page_count = page_count_
@@ -43,6 +46,8 @@ func _on_close_button_pressed() -> void:
 
 func _on_left_button_pressed() -> void:
 	current_page -= 1
+	if page_count > 1:
+		right_button.disabled = false
 	if current_page <= 0:
 		left_button.disabled = true
 	show_page(current_page)

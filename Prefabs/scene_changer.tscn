@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctb5w5mlw2857"]
+[gd_scene load_steps=3 format=3 uid="uid://ctb5w5mlw2857"]
 
-[ext_resource type="Script" path="res://Scripts/scene_changer.gd" id="1_qjscm"]
+[ext_resource type="Script" path="res://Scripts/scene_changer.gd" id="1_p65ef"]
+[ext_resource type="AudioStream" uid="uid://kf8crku36pgs" path="res://Assets/Sounds/SFX/leave.wav" id="2_xuwuo"]
 
 [node name="SceneChanger" type="CanvasLayer"]
 layer = 5
-script = ExtResource("1_qjscm")
+script = ExtResource("1_p65ef")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -16,6 +17,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BlanckScreen" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,3 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xuwuo")

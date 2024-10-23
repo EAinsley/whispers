@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvd7rwpd43gau"]
+[gd_scene load_steps=7 format=3 uid="uid://cvd7rwpd43gau"]
 
+[ext_resource type="Script" path="res://Scripts/level_manager.gd" id="1_a3nox"]
 [ext_resource type="PackedScene" uid="uid://drrqmt5bj4a7g" path="res://Prefabs/maze_generator.tscn" id="1_h3227"]
 [ext_resource type="TileSet" uid="uid://bflwmbhf5nfoc" path="res://Resources/tile_set.tres" id="2_e6mn0"]
 [ext_resource type="PackedScene" uid="uid://cboavjy5ve3m" path="res://Scene/sandbox.tscn" id="2_u7rd0"]
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_a3nox")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

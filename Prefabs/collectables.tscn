@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Prefabs/collectables.gd" id="1_ernxu"]
 [ext_resource type="Texture2D" uid="uid://c6atas75aon8k" path="res://icon.svg" id="1_vr34v"]
 
-[node name="Collectables" type="StaticBody2D"]
+[node name="Collectables" type="StaticBody2D" groups=["collectables"]]
 collision_layer = 2
 collision_mask = 0
 input_pickable = true
@@ -18,8 +18,13 @@ position = Vector2(1.5, 1)
 [node name="NearbySound" type="AudioStreamPlayer2D" parent="CollisionShape2D"]
 unique_name_in_owner = true
 position = Vector2(-1.5, -1)
+max_distance = 400.0
+
+[node name="Timer" type="Timer" parent="CollisionShape2D/NearbySound"]
+wait_time = 0.5
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="finished" from="CollisionShape2D/NearbySound" to="." method="_on_nearby_sound_finished"]
+[connection signal="timeout" from="CollisionShape2D/NearbySound/Timer" to="." method="_on_timer_timeout"]

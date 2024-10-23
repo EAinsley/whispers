@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nvqgph7tquee"
-path="res://.godot/imported/Diary.png-669df5d42fe0f34f54b216c8aeb783f7.ctex"
+uid="uid://do157v07b6c3a"
+path="res://.godot/imported/Continue  col_Button.png-5fed075e3520530e74ff50ec31295eee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arts/Scene_School/道具栏单独图标/Diary.png"
-dest_files=["res://.godot/imported/Diary.png-669df5d42fe0f34f54b216c8aeb783f7.ctex"]
+source_file="res://Import/Menu Buttons/Large Buttons/Colored Large Buttons/Continue  col_Button.png"
+dest_files=["res://.godot/imported/Continue  col_Button.png-5fed075e3520530e74ff50ec31295eee.ctex"]
 
 [params]
 

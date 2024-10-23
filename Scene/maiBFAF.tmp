@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://du3tbv17bsc7u"]
+
+[ext_resource type="Script" path="res://Scene/main_menu.gd" id="1_6f1hg"]
+[ext_resource type="Texture2D" uid="uid://dntrm3088cyfx" path="res://Import/MainMenu.png" id="2_45kux"]
+[ext_resource type="Texture2D" uid="uid://c46ks6naof8sf" path="res://Import/start and exit/start.png" id="3_jo7vw"]
+[ext_resource type="Texture2D" uid="uid://4inpuoc8mjky" path="res://Import/start and exit/exit.png" id="4_56ypn"]
+[ext_resource type="Texture2D" uid="uid://b4thn6eumwtfm" path="res://Import/Whisper.png" id="5_my7rm"]
+[ext_resource type="PackedScene" uid="uid://ctb5w5mlw2857" path="res://Prefabs/scene_changer.tscn" id="6_ntwp2"]
+[ext_resource type="AudioStream" uid="uid://dyrx7a6nh7sc" path="res://Assets/Sounds/BGM/symphony-of-fears.mp3" id="7_e2giu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6f1hg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_45kux")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 100)
+layout_mode = 2
+icon = ExtResource("3_jo7vw")
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 100)
+layout_mode = 2
+icon = ExtResource("4_56ypn")
+
+[node name="Whisper" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 30.0
+offset_right = 676.0
+offset_bottom = 187.0
+texture = ExtResource("5_my7rm")
+
+[node name="SceneChanger" parent="." instance=ExtResource("6_ntwp2")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_e2giu")
+autoplay = true

@@ -15,6 +15,8 @@ func _ready() -> void:
 	light_on_right.position.y = light_on_left.position.y
 	light_on_left.texture_scale = float(light_radius)/32.
 	light_on_right.texture_scale = float(light_radius)/32.
+	Inventory.visible = true
+
 	
 	detection_area_size.shape.radius = light_radius
 	ear.make_current()

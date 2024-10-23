@@ -10,12 +10,17 @@ var item_list : Array[ItemGrid]
 # Called when the node enters the scene tree for the first time.
 var collected_inexplicit := 0
 var collected_explicit := 0
-func _ready() -> void:
-	print("condition: ", inexplicit_number,  "ex: ", explicit_number)
+
+func initialize() -> void:
+	collected_inexplicit = 0
+	collected_explicit = 0
 	for i in 16:
 		var grid : ItemGrid = inventory_grid_scene.instantiate()
 		item_list.append(grid)
 		inventory_grid_container.add_child(grid)
+
+func _ready() -> void:
+	initialize()
 
 func add_item(item: ItemResorce) -> void:
 	if !item.is_explicit:
@@ -34,3 +39,11 @@ func is_true_end() -> bool:
 	print("in:", inexplicit_number, "ex:", explicit_number)
 	print("cin: ", collected_inexplicit, "cex: ", collected_explicit)
 	return collected_inexplicit == inexplicit_number and collected_explicit == explicit_number
+
+func clean() -> void:
+	for c in get_children():
+		remove_child(c)
+		c.queue_free()
+	initialize()
+	
+	

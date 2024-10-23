@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dndswtjtpv64g"
-path="res://.godot/imported/Record.png-abe85be5e00db0900726750505cbb862.ctex"
+uid="uid://cxkkqj10koogy"
+path="res://.godot/imported/New game Button.png-e57e09198666bd852ad7fbe20e993466.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arts/Scene_School/道具栏单独图标/Record.png"
-dest_files=["res://.godot/imported/Record.png-abe85be5e00db0900726750505cbb862.ctex"]
+source_file="res://Import/Menu Buttons/Large Buttons/Large Buttons/New game Button.png"
+dest_files=["res://.godot/imported/New game Button.png-e57e09198666bd852ad7fbe20e993466.ctex"]
 
 [params]
 

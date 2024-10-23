@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfp6cj6r6ts4r"]
+[gd_scene load_steps=6 format=3 uid="uid://dfp6cj6r6ts4r"]
 
 [ext_resource type="Script" path="res://Scripts/ending.gd" id="1_0tnsw"]
+[ext_resource type="Theme" uid="uid://d1mvy2mpb64pj" path="res://Assets/Theme/default_theme.tres" id="1_no2jo"]
+[ext_resource type="AudioStream" uid="uid://csly4t21vuefv" path="res://Assets/Sounds/BGM/true_end.wav" id="2_3qatq"]
+[ext_resource type="AudioStream" uid="uid://rh8i2vq32ocr" path="res://Assets/Sounds/BGM/false_end.wav" id="3_f01fm"]
+[ext_resource type="PackedScene" uid="uid://ctb5w5mlw2857" path="res://Prefabs/scene_changer.tscn" id="4_vavtv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,11 +13,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_no2jo")
 script = ExtResource("1_0tnsw")
 true_end = Array[String](["You’ve taken all the key items and memory fragments, ensuring that no one will ever be able to remember the existence of HilBerry Camp.", "The villagers remain in their deep sleep, still unconscious. You know that all the memories have been erased completely. The camp’s secrets will forever remain buried, and the power from the dream will no longer reach reality.", "Now, you are the only one left—the last person who knows the town’s secrets. Standing at the town’s edge, you feel its power gradually fading.", "But you also realize… for it to be sealed completely, the final memory must vanish. You look toward the distance, ready to face the ultimate destiny.", "It’s all about to end."])
 normal_end = Array[String](["You’ve completed the task. The villagers wake up from their comas, and everything returns to normal. Life in the town seems peaceful again, as if nothing ever happened.
 ", "Sunlight shines on the streets of HilBerry Camp, and the villagers go about their daily lives, with smiles and laughter filling the air.
 ", "But you feel a sense of unease. Something doesn’t seem completely resolved. Has the power from the dream truly been sealed?"])
+true_end_bgm = ExtResource("2_3qatq")
+false_end_bgm = ExtResource("3_f01fm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -39,5 +46,9 @@ text = "The villagers remain in their deep sleep, still unconscious. You know th
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="EndingBGM" type="AudioStreamPlayer" parent="."]
+
+[node name="SceneChanger" parent="." instance=ExtResource("4_vavtv")]
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

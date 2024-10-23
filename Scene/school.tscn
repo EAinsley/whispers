@@ -1,12 +1,225 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbsgj3mraf8ka"]
+[gd_scene load_steps=31 format=3 uid="uid://cbsgj3mraf8ka"]
 
 [ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_04vq6"]
+[ext_resource type="PackedScene" uid="uid://77klwrvrjs74" path="res://Scene/hospital.tscn" id="2_kq5o5"]
 [ext_resource type="Texture2D" uid="uid://4keqs0whwsms" path="res://Assets/Arts/Scene_School/Scene_School02.png" id="2_vsn81"]
+[ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="5_evib7"]
+[ext_resource type="Texture2D" uid="uid://7kvoly5av8al" path="res://Assets/Arts/Scene_School/School_item01.png" id="6_hrf82"]
+[ext_resource type="Script" path="res://Resources/item_resource.gd" id="6_n8i66"]
+[ext_resource type="AudioStream" uid="uid://dqbho2h5fg1w3" path="res://Assets/Sounds/SFX/textbook.wav" id="7_y23pv"]
+[ext_resource type="Texture2D" uid="uid://bxo2epproe6tn" path="res://Assets/Arts/Scene_School/School_item02.png" id="8_8hwtv"]
+[ext_resource type="Texture2D" uid="uid://cyg0f2d5y5qc0" path="res://Assets/Arts/Scene_School/School_item03.png" id="9_peaj6"]
+[ext_resource type="AudioStream" uid="uid://cr20xcuofmpuf" path="res://Assets/Sounds/SFX/blueprint.wav" id="9_xkjer"]
+[ext_resource type="Texture2D" uid="uid://dndswtjtpv64g" path="res://Assets/Arts/Scene_School/Inventory/Record.png" id="10_apaas"]
+[ext_resource type="AudioStream" uid="uid://eq6kcurqqbie" path="res://Assets/Sounds/SFX/photo.wav" id="10_w81ek"]
+[ext_resource type="Texture2D" uid="uid://7taely4ktiw1" path="res://Assets/Arts/Scene_School/School_item04.png" id="11_0ayit"]
+[ext_resource type="Texture2D" uid="uid://nvqgph7tquee" path="res://Assets/Arts/Scene_School/Inventory/Diary.png" id="11_8ahqn"]
+[ext_resource type="Texture2D" uid="uid://c178k4gn7j0bd" path="res://Assets/Arts/Scene_School/School_item05_Diary.png" id="12_8op3h"]
+[ext_resource type="AudioStream" uid="uid://beyigh5w5jsem" path="res://Assets/Sounds/SFX/ghostly-whispers.wav" id="13_2lp43"]
+[ext_resource type="PackedScene" uid="uid://bf0lmshl8pd51" path="res://Prefabs/enter_message.tscn" id="13_oip1k"]
+[ext_resource type="AudioStream" uid="uid://bl7hgo084ip5s" path="res://Assets/Sounds/SFX/diary.wav" id="15_4oj46"]
+[ext_resource type="AudioStream" uid="uid://bp40xv13en0b3" path="res://Assets/Sounds/BGM/Classroom.wav" id="16_b3hb7"]
+
+[sub_resource type="Resource" id="Resource_kpti7"]
+script = ExtResource("6_n8i66")
+icon = ExtResource("6_hrf82")
+name = " A Diving Textbook"
+id = ""
+size = 1
+index = 1
+item_description = "Unable to open anymore…"
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkr6t"]
+size = Vector2(40, 41)
+
+[sub_resource type="Resource" id="Resource_ckwk4"]
+script = ExtResource("6_n8i66")
+icon = ExtResource("8_8hwtv")
+name = "A Blueprint of a Single-Person Deep Diving Device"
+id = ""
+size = 1
+index = 1
+item_description = "‘Nautilus’ Deep Diving Device, for one person…"
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywhuk"]
+size = Vector2(98, 34)
+
+[sub_resource type="Resource" id="Resource_he8g6"]
+script = ExtResource("6_n8i66")
+icon = ExtResource("9_peaj6")
+name = " A Group Photo on the Wall"
+id = ""
+size = 1
+index = 1
+item_description = "Nine trainees in diving suits, ready to explore the deep lake."
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sah2m"]
+size = Vector2(90, 69)
+
+[sub_resource type="Resource" id="Resource_uqjbk"]
+script = ExtResource("6_n8i66")
+icon = ExtResource("10_apaas")
+name = "Experiment Records (XJ-47) Entry 2"
+id = "0"
+size = 6
+index = 2
+item_description = "April 2, 2021
+Today, some trainees collected samples, and we found that the samples seem to have some kind of mind-controlling ability. Everyone who came into contact with them became confused and irritable. The most concerning part is that these symptoms worsen over time, as if the samples are infiltrating their consciousness through dreams.
+"
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c024"]
+size = Vector2(94, 47)
+
+[sub_resource type="Resource" id="Resource_p0fgu"]
+script = ExtResource("6_n8i66")
+icon = ExtResource("11_8ahqn")
+name = "Diary #1"
+id = "1"
+size = 3
+index = 1
+item_description = "Date: January 5, 2021
+HilBerry Camp was once my greatest achievement, attracting countless people to learn and explore. However, the discovery in the coral reef changed everything. I began seeing those indescribable things in my dreams. They aren’t just hallucinations but some kind of supernatural presence that is gradually devouring our sanity.
+"
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4aye"]
+size = Vector2(33, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66b8k"]
+size = Vector2(141.5, 103.5)
 
 [node name="Control" instance=ExtResource("1_04vq6")]
 
+[node name="CanvasModulate" parent="GameLayer" index="0"]
+visible = true
+
+[node name="LeftScene" parent="GameLayer/MarginalContainer/VSeparator" index="0"]
+modulate = Color(0.611765, 0.662745, 0.815686, 1)
+
 [node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
-next_level = null
+modulate = Color(0.300342, 0.350988, 0.516004, 1)
+next_level = ExtResource("2_kq5o5")
 
 [node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
 texture = ExtResource("2_vsn81")
+
+[node name="Collectables" type="Node2D" parent="GameLayer" index="4"]
+
+[node name="Explicit" type="Node2D" parent="GameLayer/Collectables" index="0"]
+
+[node name="Textbook" parent="GameLayer/Collectables/Explicit" index="0" instance=ExtResource("5_evib7")]
+position = Vector2(913, 472)
+item = SubResource("Resource_kpti7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/Textbook" index="0"]
+position = Vector2(8.00001, 28)
+scale = Vector2(0.268293, 0.268293)
+texture = ExtResource("6_hrf82")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/Textbook" index="1"]
+position = Vector2(8, 31)
+shape = SubResource("RectangleShape2D_bkr6t")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/Textbook/CollisionShape2D" index="0"]
+stream = ExtResource("7_y23pv")
+max_distance = 200.0
+
+[node name="Blueprint" parent="GameLayer/Collectables/Explicit" index="1" instance=ExtResource("5_evib7")]
+position = Vector2(668, 413)
+item = SubResource("Resource_ckwk4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/Blueprint" index="0"]
+position = Vector2(-45.1718, 51.1719)
+scale = Vector2(0.280886, 0.280886)
+texture = ExtResource("8_8hwtv")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/Blueprint" index="1"]
+position = Vector2(-45, 52)
+shape = SubResource("RectangleShape2D_ywhuk")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/Blueprint/CollisionShape2D" index="0"]
+stream = ExtResource("9_xkjer")
+
+[node name="Photo" parent="GameLayer/Collectables/Explicit" index="2" instance=ExtResource("5_evib7")]
+position = Vector2(747, 210)
+item = SubResource("Resource_he8g6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/Photo" index="0"]
+position = Vector2(-19, -70)
+scale = Vector2(0.248907, 0.248907)
+texture = ExtResource("9_peaj6")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/Photo" index="1"]
+position = Vector2(-19, -69.5)
+shape = SubResource("RectangleShape2D_sah2m")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/Photo/CollisionShape2D" index="0"]
+stream = ExtResource("10_w81ek")
+
+[node name="Inexplicit" type="Node2D" parent="GameLayer/Collectables" index="1"]
+
+[node name="Record2" parent="GameLayer/Collectables/Inexplicit" index="0" instance=ExtResource("5_evib7")]
+position = Vector2(743, 347)
+item = SubResource("Resource_uqjbk")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Inexplicit/Record2" index="0"]
+position = Vector2(5.06312, 206.969)
+scale = Vector2(0.245015, 0.245015)
+texture = ExtResource("11_0ayit")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Inexplicit/Record2" index="1"]
+position = Vector2(4, 206.5)
+shape = SubResource("RectangleShape2D_1c024")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Inexplicit/Record2/CollisionShape2D" index="0"]
+stream = ExtResource("13_2lp43")
+
+[node name="Diary1" parent="GameLayer/Collectables/Inexplicit" index="1" instance=ExtResource("5_evib7")]
+position = Vector2(1014, 266)
+item = SubResource("Resource_p0fgu")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Inexplicit/Diary1" index="0"]
+position = Vector2(-5.8594, 8.74402)
+scale = Vector2(0.254006, 0.254006)
+texture = ExtResource("12_8op3h")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Inexplicit/Diary1" index="1"]
+position = Vector2(-5.5, 9)
+shape = SubResource("RectangleShape2D_c4aye")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Inexplicit/Diary1/CollisionShape2D" index="0"]
+stream = ExtResource("15_4oj46")
+
+[node name="Message" parent="UILayer" index="0" instance=ExtResource("13_oip1k")]
+offset_left = 729.0
+offset_top = 26.0
+offset_right = 950.0
+offset_bottom = 197.0
+
+[node name="CollisionShape2D" parent="UILayer/Message/Area2D" index="0"]
+position = Vector2(-632.75, 58.25)
+shape = SubResource("RectangleShape2D_66b8k")
+
+[node name="Label" type="Label" parent="UILayer/Message" index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Click to collect the item"
+
+[node name="BackgroundMusic" parent="." index="3"]
+stream = ExtResource("16_b3hb7")
+volume_db = 5.0
+
+[editable path="GameLayer/Collectables/Explicit/Textbook"]
+[editable path="GameLayer/Collectables/Explicit/Blueprint"]
+[editable path="GameLayer/Collectables/Explicit/Photo"]
+[editable path="GameLayer/Collectables/Inexplicit/Record2"]
+[editable path="GameLayer/Collectables/Inexplicit/Diary1"]
+[editable path="UILayer/Message"]

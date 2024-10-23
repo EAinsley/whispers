@@ -1,9 +1,270 @@
-[gd_scene load_steps=3 format=3 uid="uid://77klwrvrjs74"]
+[gd_scene load_steps=36 format=3 uid="uid://77klwrvrjs74"]
 
 [ext_resource type="PackedScene" uid="uid://cvd7rwpd43gau" path="res://Scene/level_template.tscn" id="1_055ke"]
+[ext_resource type="PackedScene" uid="uid://confiukppg0t3" path="res://Scene/lab.tscn" id="2_eicnt"]
 [ext_resource type="Texture2D" uid="uid://svttaumcuoge" path="res://Assets/Arts/Scene_Hospital/Scene_Hospital02.png" id="2_t6ms6"]
+[ext_resource type="PackedScene" uid="uid://cu1oh4bod1qn5" path="res://Prefabs/collectables.tscn" id="5_qtcvv"]
+[ext_resource type="Texture2D" uid="uid://bmut50ceha4y4" path="res://Assets/Arts/Scene_Hospital/Hospital_item01.png" id="6_usrgq"]
+[ext_resource type="AudioStream" uid="uid://brr7dcrc3suo6" path="res://Assets/Sounds/SFX/hospital/ECG.wav" id="7_bwbid"]
+[ext_resource type="Script" path="res://Resources/item_resource.gd" id="7_ffsh6"]
+[ext_resource type="Texture2D" uid="uid://sgwpir5k6bs2" path="res://Assets/Arts/Scene_Hospital/Hospital_item02.png" id="8_y858w"]
+[ext_resource type="AudioStream" uid="uid://dv1hw7ebglr8y" path="res://Assets/Sounds/SFX/hospital/scapal.wav" id="9_6xlvv"]
+[ext_resource type="Texture2D" uid="uid://c0e4etufctoai" path="res://Assets/Arts/Scene_Hospital/Hospital_item03.png" id="9_bxo43"]
+[ext_resource type="Texture2D" uid="uid://bcdfhmr042faw" path="res://Assets/Arts/Scene_Hospital/Hospital_item04.png" id="10_ehdmr"]
+[ext_resource type="Texture2D" uid="uid://nvqgph7tquee" path="res://Assets/Arts/Scene_School/Inventory/Diary.png" id="10_pbhrd"]
+[ext_resource type="AudioStream" uid="uid://dsb646804sktw" path="res://Assets/Sounds/SFX/hospital/x-ray.wav" id="11_a1hkq"]
+[ext_resource type="Texture2D" uid="uid://ddlki0iborxe7" path="res://Assets/Arts/Scene_Hospital/Hospital_item_diary.png" id="11_aeajj"]
+[ext_resource type="Texture2D" uid="uid://dndswtjtpv64g" path="res://Assets/Arts/Scene_School/Inventory/Record.png" id="12_2ol3v"]
+[ext_resource type="Texture2D" uid="uid://byf0kdphy2xkx" path="res://Assets/Arts/Scene_Hospital/Hospital_item_record01.png" id="12_cfi8h"]
+[ext_resource type="AudioStream" uid="uid://b4qcluft8ym35" path="res://Assets/Sounds/SFX/hospital/medicalrecord.wav" id="13_ysomp"]
+[ext_resource type="Texture2D" uid="uid://b1ue5tc3cn8wr" path="res://Assets/Arts/Scene_Hospital/Hospital_item_record02.png" id="14_bgbpu"]
+[ext_resource type="AudioStream" uid="uid://bl7hgo084ip5s" path="res://Assets/Sounds/SFX/diary.wav" id="16_wc507"]
+[ext_resource type="AudioStream" uid="uid://dkjnf10yw3g6p" path="res://Assets/Sounds/BGM/hospital.wav" id="19_i2da3"]
+[ext_resource type="AudioStream" uid="uid://beyigh5w5jsem" path="res://Assets/Sounds/SFX/ghostly-whispers.wav" id="19_uyjrx"]
+
+[sub_resource type="Resource" id="Resource_dfmgm"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("6_usrgq")
+name = " An ECG Machine"
+id = ""
+size = 1
+index = 1
+item_description = "Some Chaotic ECG."
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyt7x"]
+size = Vector2(109, 77)
+
+[sub_resource type="Resource" id="Resource_fv5lm"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("8_y858w")
+name = "A Broken Scalpel"
+id = ""
+size = 1
+index = 1
+item_description = "Cut through the unknown with a fractured blade. Something appears to have leaked out."
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3er76"]
+size = Vector2(64.7632, 21.2512)
+
+[sub_resource type="Resource" id="Resource_3uicg"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("9_bxo43")
+name = " A Faded X-ray"
+id = ""
+size = 1
+index = 1
+item_description = " A hazy object inside the brain, like the thing found in coral reefs."
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oij2f"]
+size = Vector2(64, 91)
+
+[sub_resource type="Resource" id="Resource_xkuy7"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("10_ehdmr")
+name = "A Page from a Medical Record"
+id = ""
+size = 1
+index = 1
+item_description = "Medical Record: ID: XJ-042, experienced a close encounter, has lost independent consciousness.
+"
+is_explicit = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obalh"]
+size = Vector2(41.3229, 52.9264)
+
+[sub_resource type="Resource" id="Resource_y02gn"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("10_pbhrd")
+name = "Diary #3"
+id = "1"
+size = 3
+index = 3
+item_description = "Date: February 18, 2021
+More and more people are beginning to see HilBerry Camp in their dreams. Fragments of memory are causing them to gradually awaken, but the price is a coma. I can’t let this place be remembered again. If those who once lived here regain their memories, it will find its way into the real world… No, I must return from time to time to check on things.
+"
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmpuo"]
+size = Vector2(34.3634, 52.1696)
+
+[sub_resource type="Resource" id="Resource_8qeh4"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("12_2ol3v")
+name = "Experiment Records (XJ-47) Entry 1"
+id = "0"
+size = 6
+index = 1
+item_description = "March 14, 2021
+A few days ago, some trainees reported unusual activity near the coral reef. It seems that strange living organisms have appeared. We’re planning to start a new study and organize a retrieval operation soon."
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orpbm"]
+size = Vector2(35.2261, 21.6327)
+
+[sub_resource type="Resource" id="Resource_sov6i"]
+script = ExtResource("7_ffsh6")
+icon = ExtResource("12_2ol3v")
+name = "Experiment Records (XJ-47) Entry 5"
+id = "0"
+size = 6
+index = 5
+item_description = "May 10, 2021
+The discussion has reached a deadlock. Dr. S insists on sealing off the experiment completely and erasing the related memories. It feels like an uncontrollable force is manipulating us. We must act immediately."
+is_explicit = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgls"]
+size = Vector2(42, 20)
 
 [node name="Control" instance=ExtResource("1_055ke")]
 
+[node name="CanvasModulate" parent="GameLayer" index="0"]
+visible = true
+
+[node name="LeftScene" parent="GameLayer/MarginalContainer/VSeparator" index="0"]
+color = Color(0.607843, 0.945098, 0.94902, 1)
+
+[node name="MazeGenerator" parent="GameLayer/MarginalContainer/VSeparator/LeftScene" index="0"]
+modulate = Color(0.0393672, 0.280836, 0.349079, 1)
+next_level = ExtResource("2_eicnt")
+
 [node name="RightScene" parent="GameLayer/MarginalContainer/VSeparator" index="1"]
 texture = ExtResource("2_t6ms6")
+
+[node name="Collectables" type="Node2D" parent="GameLayer" index="4"]
+
+[node name="Explicit" type="Node2D" parent="GameLayer/Collectables" index="0"]
+
+[node name="ECG" parent="GameLayer/Collectables/Explicit" index="0" instance=ExtResource("5_qtcvv")]
+position = Vector2(813, 331)
+item = SubResource("Resource_dfmgm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/ECG" index="0"]
+position = Vector2(-40.125, -131.875)
+scale = Vector2(0.245793, 0.245793)
+texture = ExtResource("6_usrgq")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/ECG" index="1"]
+position = Vector2(-40.5, -132.5)
+shape = SubResource("RectangleShape2D_pyt7x")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/ECG/CollisionShape2D" index="0"]
+stream = ExtResource("7_bwbid")
+
+[node name="Scalpel" parent="GameLayer/Collectables/Explicit" index="1" instance=ExtResource("5_qtcvv")]
+position = Vector2(1029, 378)
+item = SubResource("Resource_fv5lm")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/Scalpel" index="0"]
+position = Vector2(3.49997, -0.500026)
+scale = Vector2(0.254629, 0.254629)
+texture = ExtResource("8_y858w")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/Scalpel" index="1"]
+position = Vector2(2.59729, 0.680206)
+rotation = 0.295607
+shape = SubResource("RectangleShape2D_3er76")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/Scalpel/CollisionShape2D" index="0"]
+stream = ExtResource("9_6xlvv")
+
+[node name="XRay" parent="GameLayer/Collectables/Explicit" index="2" instance=ExtResource("5_qtcvv")]
+position = Vector2(952, 265)
+item = SubResource("Resource_3uicg")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/XRay" index="0"]
+position = Vector2(-2.75, -12.75)
+scale = Vector2(0.252959, 0.252959)
+texture = ExtResource("9_bxo43")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/XRay" index="1"]
+position = Vector2(-4, -10.5)
+shape = SubResource("RectangleShape2D_oij2f")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/XRay/CollisionShape2D" index="0"]
+stream = ExtResource("11_a1hkq")
+
+[node name="MedicalRecord" parent="GameLayer/Collectables/Explicit" index="3" instance=ExtResource("5_qtcvv")]
+position = Vector2(840, 366)
+item = SubResource("Resource_xkuy7")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Explicit/MedicalRecord" index="0"]
+position = Vector2(3.1406, 6.8594)
+scale = Vector2(0.2522, 0.2522)
+texture = ExtResource("10_ehdmr")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Explicit/MedicalRecord" index="1"]
+position = Vector2(5.08984, 3.64645)
+rotation = 0.70826
+shape = SubResource("RectangleShape2D_obalh")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Explicit/MedicalRecord/CollisionShape2D" index="0"]
+stream = ExtResource("13_ysomp")
+
+[node name="Inexplicit" type="Node2D" parent="GameLayer/Collectables" index="1"]
+
+[node name="Diary3" parent="GameLayer/Collectables/Inexplicit" index="0" instance=ExtResource("5_qtcvv")]
+position = Vector2(596, 192)
+item = SubResource("Resource_y02gn")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Inexplicit/Diary3" index="0"]
+position = Vector2(11.0513, -6.25)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_aeajj")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Inexplicit/Diary3" index="1"]
+position = Vector2(12.0105, -3.99176)
+rotation = 0.985134
+shape = SubResource("RectangleShape2D_kmpuo")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Inexplicit/Diary3/CollisionShape2D" index="0"]
+stream = ExtResource("16_wc507")
+
+[node name="Record1" parent="GameLayer/Collectables/Inexplicit" index="1" instance=ExtResource("5_qtcvv")]
+position = Vector2(594, 509)
+rotation = 0.0183705
+item = SubResource("Resource_8qeh4")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Inexplicit/Record1" index="0"]
+position = Vector2(4.20927, -43.0846)
+rotation = -0.0180046
+scale = Vector2(0.275916, 0.275916)
+texture = ExtResource("12_cfi8h")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Inexplicit/Record1" index="1"]
+position = Vector2(3.56561, -43.8009)
+rotation = 0.451299
+shape = SubResource("RectangleShape2D_orpbm")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Inexplicit/Record1/CollisionShape2D" index="0"]
+position = Vector2(-0.452725, -0.0752862)
+stream = ExtResource("19_uyjrx")
+
+[node name="Record5" parent="GameLayer/Collectables/Inexplicit" index="2" instance=ExtResource("5_qtcvv")]
+item = SubResource("Resource_sov6i")
+
+[node name="Sprite2D" parent="GameLayer/Collectables/Inexplicit/Record5" index="0"]
+position = Vector2(1053.8, 460.375)
+scale = Vector2(0.240566, 0.240566)
+texture = ExtResource("14_bgbpu")
+
+[node name="CollisionShape2D" parent="GameLayer/Collectables/Inexplicit/Record5" index="1"]
+position = Vector2(1049, 461)
+shape = SubResource("RectangleShape2D_ulgls")
+
+[node name="NearbySound" parent="GameLayer/Collectables/Inexplicit/Record5/CollisionShape2D" index="0"]
+stream = ExtResource("19_uyjrx")
+
+[node name="BackgroundMusic" parent="." index="3"]
+stream = ExtResource("19_i2da3")
+
+[editable path="GameLayer/Collectables/Explicit/ECG"]
+[editable path="GameLayer/Collectables/Explicit/Scalpel"]
+[editable path="GameLayer/Collectables/Explicit/XRay"]
+[editable path="GameLayer/Collectables/Explicit/MedicalRecord"]
+[editable path="GameLayer/Collectables/Inexplicit/Diary3"]
+[editable path="GameLayer/Collectables/Inexplicit/Record1"]
+[editable path="GameLayer/Collectables/Inexplicit/Record5"]
